@@ -1,0 +1,18 @@
+---
+title: "Visualization Activity"
+author: "Connor Schnable"
+date: '2022-04-17'
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+---
+You can see from these two scatterplots how chocolate candies had a much higher average win percentage when compared to fruity candies. The win percentage is calculated by the amount of "wins" a certain type of candy had when in a matchup with another type of candy. 
+
+```{r visuals, echo=TRUE}
+candy_data <- read.csv("candy-data.csv")
+library(ggplot2)
+ggplot(data = candy_data)+geom_point(mapping=aes(x=fruity,y=winpercent),color="orange")
+ggplot(data = candy_data)+geom_point(mapping=aes(x=chocolate,y=winpercent),color="red")
+```
+
